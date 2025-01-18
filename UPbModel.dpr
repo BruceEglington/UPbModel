@@ -13,12 +13,12 @@ uses
   UPb_ShtIm in 'UPb_ShtIm.pas' {fmSheetImport},
   About in 'About.pas' {AboutBox},
   Allsorts in '..\Eglington Delphi common code items\Allsorts.pas',
-  GDW_varb in '..\GDW3x\GDW_varb.pas',
-  Gd_file in '..\GDW3x\Gd_file.pas',
-  gd_drv in '..\GDW3x\gd_drv.pas' {fmOptDir},
   Vcl.Themes,
   Vcl.Styles,
-  dmGdtmpDB in '..\GDW3x\dmGdtmpDB.pas' {dmGdwtmp: TDataModule};
+  gd_drv in '..\GeoDate-VCL\gd_drv.pas',
+  GDW_varb in '..\GeoDate-VCL\GDW_varb.pas',
+  dmGdtmpDB in '..\GeoDate-VCL\dmGdtmpDB.pas' {dmGdwtmp: TDataModule},
+  Gd_file in '..\GeoDate-VCL\Gd_file.pas';
 
 {$R *.res}
 
@@ -29,7 +29,6 @@ begin
   Application.CreateForm(TfmPbLoss3, fmPbLoss3);
   Application.CreateForm(TfmSheetImport, fmSheetImport);
   Application.CreateForm(TAboutBox, AboutBox);
-  Application.CreateForm(TfmOptDir, fmOptDir);
   Application.CreateForm(TdmGdwtmp, dmGdwtmp);
   Application.Run;
 end.

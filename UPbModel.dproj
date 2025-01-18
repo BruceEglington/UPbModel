@@ -98,7 +98,6 @@
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <DCC_ExeOutput>C:\EXE64\</DCC_ExeOutput>
         <DCC_DcuOutput>C:\DCU64\</DCC_DcuOutput>
-        <DCC_UnitSearchPath>C:\DCU64;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <DCC_DcpOutput>C:\DCP64\</DCC_DcpOutput>
         <DCC_BplOutput>C:\DCP64\</DCC_BplOutput>
@@ -141,7 +140,6 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <DCC_OutputDRCFile>true</DCC_OutputDRCFile>
         <BRCC_Verbose>true</BRCC_Verbose>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -150,6 +148,8 @@
         <DCC_MapFile>3</DCC_MapFile>
         <DCC_DebugInformation>2</DCC_DebugInformation>
         <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
+        <VerInfo_MajorVer>5</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=5.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=5.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -174,17 +174,14 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\Eglington Delphi common code items\Allsorts.pas"/>
-        <DCCReference Include="..\GDW3x\GDW_varb.pas"/>
-        <DCCReference Include="..\GDW3x\Gd_file.pas"/>
-        <DCCReference Include="..\GDW3x\gd_drv.pas">
-            <Form>fmOptDir</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="..\GDW3x\dmGdtmpDB.pas">
+        <DCCReference Include="..\GeoDate-VCL\gd_drv.pas"/>
+        <DCCReference Include="..\GeoDate-VCL\GDW_varb.pas"/>
+        <DCCReference Include="..\GeoDate-VCL\dmGdtmpDB.pas">
             <Form>dmGdwtmp</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\GeoDate-VCL\Gd_file.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -212,6 +209,12 @@
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="C:\EXE64\UPbModel.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\EXE64\UPbModel.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>UPbModel.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Debug\UPbModel.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
