@@ -18,7 +18,8 @@ uses
   gd_drv in '..\GeoDate-VCL\gd_drv.pas',
   GDW_varb in '..\GeoDate-VCL\GDW_varb.pas',
   dmGdtmpDB in '..\GeoDate-VCL\dmGdtmpDB.pas' {dmGdwtmp: TDataModule},
-  Gd_file in '..\GeoDate-VCL\Gd_file.pas';
+  Gd_file in '..\GeoDate-VCL\Gd_file.pas',
+  ImageCollection_dm in '..\Eglington Delphi common code items\ImageCollection_dm.pas' {dmImageCollection: TDataModule};
 
 {$R *.res}
 
@@ -30,5 +31,6 @@ begin
   Application.CreateForm(TfmSheetImport, fmSheetImport);
   Application.CreateForm(TAboutBox, AboutBox);
   Application.CreateForm(TdmGdwtmp, dmGdwtmp);
+  Application.CreateForm(TdmImageCollection, dmImageCollection);
   Application.Run;
 end.
